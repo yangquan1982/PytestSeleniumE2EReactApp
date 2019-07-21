@@ -1,9 +1,10 @@
+#!/usr/bin/python3
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 def pytest_addoption(parser):
-    parser.addoption("--url", action="store", default="http://localhost", help="url")
+    parser.addoption("--url", action="store", default="http://localhost:3000", help="url")
 
 
 @pytest.fixture(scope="module", autouse=True)
