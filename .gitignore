@@ -26,3 +26,5 @@ yarn-error.log*
 /pytest/__pycache__
 /pytest/.idea
 /pytest/venv/*
+/pytest/.pytest_cache
+/pytest/test/
