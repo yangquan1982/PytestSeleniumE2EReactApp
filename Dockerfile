@@ -34,8 +34,6 @@ RUN npm run build
 RUN cp -rf build/. /var/www/html
 
 EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
-
 
 # Install python3.6
 RUN apt-get install -y python python-dev python3.6 python3.6-dev python3.6-distutils
