@@ -34,6 +34,7 @@ RUN npm run build
 RUN cp -rf build/. /var/www/html
 
 EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
 
 # Install python3.6
 RUN apt-get install -y python python-dev python3.6 python3.6-dev python3.6-distutils
@@ -42,7 +43,7 @@ RUN pip -V
 
 # Chrome Driver
 RUN mkdir -p /opt/selenium \
-    && wget -q http://chromedriver.storage.googleapis.com/2.45/chromedriver_linux64.zip -O /opt/selenium/chromedriver_linux64.zip \
+    && wget -q http://chromedriver.storage.googleapis.com/75.0.3770.90/chromedriver_linux64.zip -O /opt/selenium/chromedriver_linux64.zip \
     && cd /opt/selenium; unzip /opt/selenium/chromedriver_linux64.zip; rm -rf chromedriver_linux64.zip; ln -fs /opt/selenium/chromedriver /usr/local/bin/chromedriver;
 
 # Install python dependencies
